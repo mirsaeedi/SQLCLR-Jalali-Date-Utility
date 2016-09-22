@@ -20,7 +20,7 @@ RECONFIGURE;
 GO  
 ```
 
-* Run the Deployment Scrtip (from Dist\DeploymentScript.sql) to generate functions in your database. Note that you have to run this script in SQLCMD Mode. So From SQL Management Studio, From Query Menu, Select SQLCMD Mode and then execute the query.
+* Run the Deployment Script in SQL Server Management Studio (from Dist\DeploymentScript.sql) to generate functions in your database. Note that you have to run this script in SQLCMD Mode. So From SQL Management Studio, From Query Menu, Select SQLCMD Mode and then execute the query.
 Please be sure that you have changed the DatabaseName value to your database name.
 
 
@@ -28,7 +28,7 @@ Please be sure that you have changed the DatabaseName value to your database nam
 
 ###### ★ Convert Gregorian To Jalali:
 
-Suppose that GETDATE() Method in sql server returns 2016/09/22 15:44
+Suppose that GETDATE() Method in sql server returns 2016/09/22 15:04:33
 
 ```sql
 select dbo.GregorianToJalali(GETDATE(),'yy') -- returns 95
@@ -50,6 +50,39 @@ select dbo.GregorianToJalali(GETDATE(),'yyyy-M') -- returns 1395/7
 select dbo.GregorianToJalali(GETDATE(),'yyyy/MM/dd') -- returns 1395/07/01
 ```
 
+```sql
+select dbo.GregorianToJalali(GETDATE(),'yyyy/MM/dd hh:mm tt') -- returns 1395/07/01 03:04 ب ظ
+```
+
+```sql
+select dbo.GregorianToJalali(GETDATE(),'yyyy/MM/dd hh:mm:ss tt') -- returns 1395/07/01 03:04:33 ب ظ
+```
+
+```sql
+select dbo.GregorianToJalali(GETDATE(),'yyyy/MM/dd HH:mm') -- returns 1395/07/01 15:04
+```
+
+```sql
+select dbo.GregorianToJalali(GETDATE(),'yyyy MMMM dddd') -- returns 1395 پنج شنبه مهر
+```
 
 
+###### ★ Convert Jajali Date To Gregorian:
 
+```sql
+select dbo.JalaliToGregorian('95-06-11','-') --returns 2016-09-01 00:00:00.000
+```
+
+```sql
+select dbo.JalaliToGregorian('1395/06/11','/') --returns 2016-09-01 00:00:00.000
+```
+
+###### ★ Some times you need to have the first and last day of a persian month in gregorian date (specially in reporting)
+
+```sql
+select dbo.GetJalaliLastDayOfMonth(GETDATE()) --returns 2016-10-21 00:00:00.000 which is equal to 1395/07/30
+```
+
+```sql
+select dbo.GetJalaliFirstDayOfMonth(GETDATE()) --returns 2016-09-22 00:00:00.000 which is equal to 1395/07/01
+```
