@@ -20,7 +20,7 @@ RECONFIGURE;
 GO  
 ```
 
-* Run the Deployment Script in SQL Server Management Studio (from Dist\DeploymentScript.sql) to generate functions in your database. Note that you have to run this script in SQLCMD Mode. So From SQL Management Studio, From Query Menu, Select SQLCMD Mode and then execute the query.
+* Run the Deployment Script in SQL Server Management Studio (from SqlCLR.JalaliDateUtility\Dist\DeploymentScript.sql) to generate functions in your database. Note that you have to run this script in SQLCMD Mode. So From SQL Management Studio, From Query Menu, Select SQLCMD Mode and then execute the query.
 Please be sure that you have changed the DatabaseName value to your database name.
 
 
