@@ -39,11 +39,11 @@ select dbo.GregorianToJalali(GETDATE(),'yyyy') -- returns 1395
 ```
 
 ```sql
-select dbo.GregorianToJalali(GETDATE(),'yyyy-MM') -- returns 1395/07
+select dbo.GregorianToJalali(GETDATE(),'yyyy-MM') -- returns 1395-07
 ```
 
 ```sql
-select dbo.GregorianToJalali(GETDATE(),'yyyy-M') -- returns 1395/7
+select dbo.GregorianToJalali(GETDATE(),'yyyy-M') -- returns 1395-7
 ```
 
 ```sql
