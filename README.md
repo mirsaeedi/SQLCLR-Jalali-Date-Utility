@@ -7,7 +7,7 @@ The aim of this project is to make it more easier for developers to work with ja
 
  ## 💡 Installation
 
-* [Enabling CLR Integration In SQL Server](https://msdn.microsoft.com/en-us/library/ms131048.aspx)
+* Since this library has beed developed using SQL CLR, firstly you need to configure your SQL Server by [Enabling CLR Integration In SQL Server](https://msdn.microsoft.com/en-us/library/ms131048.aspx)
 
 ```sql
 sp_configure 'show advanced options', 1;  
