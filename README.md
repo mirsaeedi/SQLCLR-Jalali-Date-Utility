@@ -22,8 +22,9 @@ GO
 
 * Run the [Deployment Script](https://github.com/mirsaeedi/SQLCLR-Jalali-Date-Utility/blob/master/SqlCLR.JalaliDateUtility/Dist/DeploymentScript.sql) in SQL Server Management Studio to generate the Jalali functions in your database. 
 
-* Note that you have to run this script in SQLCMD Mode. So From SQL Management Studio, From Query Menu, Select SQLCMD Mode and then execute the query.
-* Please be sure that you have changed the _[your-database-name]_ in the [Deployment Script](https://github.com/mirsaeedi/SQLCLR-Jalali-Date-Utility/blob/master/SqlCLR.JalaliDateUtility/Dist/DeploymentScript.sql) to your database's name.
+* Note that you have to run this script in SQLCMD Mode. So in SQL Management Studio, Select _Query Menu_, and then select _SQLCMD Mode_. Now you will be able to execute the query.
+
+* Please be sure that you have changed the _[your-database-name]_ inside the [Deployment Script](https://github.com/mirsaeedi/SQLCLR-Jalali-Date-Utility/blob/master/SqlCLR.JalaliDateUtility/Dist/DeploymentScript.sql) to your database's name.
 
 
 ## 🕹 Usage
