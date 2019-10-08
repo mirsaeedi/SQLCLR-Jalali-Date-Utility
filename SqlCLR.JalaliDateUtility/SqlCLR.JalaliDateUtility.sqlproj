@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{c078ae9b-f978-44bc-ac3d-1a6705a8098c}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -75,6 +75,6 @@
     <Compile Include="JalaliDateUtility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PreDeploy Include="TestScripts\TestGregorianToJalali.sql" />
+    <PreDeploy Include="TestScripts\Test.sql" />
   </ItemGroup>
 </Project>

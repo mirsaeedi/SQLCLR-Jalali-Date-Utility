@@ -22,8 +22,9 @@ public class JalaliDateUtility
         {
             var year = pc.GetYear(dateTime.Value);
             var month = pc.GetMonth(dateTime.Value);
-            var day = pc.GetDayOfMonth(dateTime.Value);
-            
+            var dayOfMonth = pc.GetDayOfMonth(dateTime.Value);
+            var dayOfWeek = pc.GetDayOfWeek(dateTime.Value);
+
             var result = "";
 
             result = FormatSeconds(format, dateTime.Value);
@@ -33,7 +34,7 @@ public class JalaliDateUtility
 
             result = FormatYears(result, year);
             result = FormatMonths(result, month);
-            result = FormatDays(result, day);
+            result = FormatDays(result, dayOfMonth,dayOfWeek);
 
             return result;
         }
@@ -146,10 +147,10 @@ public class JalaliDateUtility
             .Replace("M", month.ToString());
     }
 
-    private static string FormatDays(string input, int day)
+    private static string FormatDays(string input, int day, DayOfWeek dayOfWeek)
     {
         return input
-            .Replace("dddd", GetJalaliDayName(day))
+            .Replace("dddd", GetJalaliDayName(dayOfWeek))
             .Replace("dd", day.ToString("D2"))
             .Replace("d", day.ToString());
     }
@@ -177,27 +178,27 @@ public class JalaliDateUtility
             .Replace("m", dateTime.ToString("%m"));
     }
 
-    private static string GetJalaliDayName(int day)
+    private static string GetJalaliDayName(DayOfWeek day)
     {
-        if (day == (int)DayOfWeek.Saturday)
+        if (day == DayOfWeek.Saturday)
             return "شنبه";
 
-        if (day == (int)DayOfWeek.Sunday)
+        if (day == DayOfWeek.Sunday)
             return "یک شنبه";
 
-        if (day == (int)DayOfWeek.Monday)
+        if (day == DayOfWeek.Monday)
             return "دوشنبه";
 
-        if (day == (int)DayOfWeek.Tuesday)
+        if (day == DayOfWeek.Tuesday)
             return "سه شنبه";
 
-        if (day == (int)DayOfWeek.Wednesday)
+        if (day == DayOfWeek.Wednesday)
             return "چهارشنبه";
 
-        if (day == (int)DayOfWeek.Thursday)
+        if (day == DayOfWeek.Thursday)
             return "پنج شنبه";
 
-        if (day == (int)DayOfWeek.Thursday)
+        if (day == DayOfWeek.Thursday)
             return "جمعه";
 
         return null;
