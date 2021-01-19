@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Data;
-using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Microsoft.SqlServer.Server;
 
@@ -34,7 +32,7 @@ public class JalaliDateUtility
 
             result = FormatYears(result, year);
             result = FormatMonths(result, month);
-            result = FormatDays(result, dayOfMonth,dayOfWeek);
+            result = FormatDays(result, dayOfMonth, dayOfWeek);
 
             return result;
         }
